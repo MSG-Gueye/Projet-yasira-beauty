@@ -12,8 +12,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
+  background: linear-gradient(135deg, #fefefe 0%, #f8f6f0 100%);
+  color: #2c1810;
   line-height: 1.6;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -55,39 +55,72 @@ body {
   background-clip: text;
 }
 
+/* Luxury Background Variations */
+.bg-luxury-white {
+  background: linear-gradient(135deg, #ffffff 0%, #fefcf8 100%);
+}
+
+.bg-luxury-cream {
+  background: linear-gradient(135deg, #faf8f5 0%, #f5f1e8 100%);
+}
+
+.bg-luxury-beige {
+  background: linear-gradient(135deg, #f8f6f0 0%, #f0ede4 100%);
+}
+
+.bg-luxury-light {
+  background: linear-gradient(135deg, #fdfdfd 0%, #f8f6f2 100%);
+}
+
 /* Glassmorphism Effect */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(44, 24, 16, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(44, 24, 16, 0.15);
 }
 
 /* Product Card Hover Effects */
 .product-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #ffffff 0%, #fefcf8 100%);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
 }
 
 /* Button Styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/25 hover:scale-105;
+  @apply bg-gradient-to-r from-yellow-400 to-yellow-600 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/25 hover:scale-105;
 }
 
 .btn-secondary {
-  @apply bg-transparent border-2 border-yellow-400 text-yellow-400 font-semibold py-3 px-8 rounded-lg transition-all duration-300 hover:bg-yellow-400 hover:text-black;
+  @apply bg-white border-2 border-yellow-400 text-yellow-600 font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:bg-yellow-400 hover:text-white hover:shadow-lg;
+}
+
+.btn-luxury {
+  @apply bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-yellow-300 text-amber-800 font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 hover:text-white hover:shadow-xl;
 }
 
 /* Animation Classes */
 .fade-in {
-  animation: fadeIn 0.6s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 .slide-up {
-  animation: slideUp 0.8s ease-out;
+  animation: slideUp 1s ease-out;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 
 @keyframes fadeIn {
@@ -110,6 +143,15 @@ body {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 /* Loading Spinner */
 .spinner {
   border: 3px solid rgba(212, 175, 55, 0.3);
@@ -127,21 +169,121 @@ body {
 
 /* Form Styles */
 .form-input {
-  @apply w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 transition-all duration-300;
+  @apply w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-400/20 transition-all duration-300;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
 }
 
 .form-label {
-  @apply block text-sm font-medium text-gray-300 mb-2;
+  @apply block text-sm font-medium text-gray-700 mb-2;
 }
 
 /* Cart Badge */
 .cart-badge {
-  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center;
+  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-medium;
 }
 
 /* Hero Section */
 .hero-bg {
-  background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(212,175,55,0.1)), url('https://images.unsplash.com/photo-1589782431746-713d84eef3c4') center/cover;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,246,240,0.8)), url('https://images.unsplash.com/photo-1589782431746-713d84eef3c4') center/cover;
+}
+
+/* Luxury Card Styles */
+.luxury-card {
+  @apply bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.luxury-card:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Mega Menu Styles */
+.mega-menu {
+  @apply absolute top-full left-0 w-full bg-white border-t border-gray-100 shadow-2xl z-50;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.mega-menu-item {
+  @apply block px-4 py-3 text-gray-700 hover:text-yellow-600 hover:bg-yellow-50 transition-colors duration-200 border-b border-gray-50;
+}
+
+/* Category Menu */
+.category-menu {
+  @apply grid grid-cols-4 gap-8 p-8;
+}
+
+.category-section {
+  @apply space-y-4;
+}
+
+.category-title {
+  @apply font-semibold text-gray-800 text-lg border-b border-yellow-200 pb-2 mb-4;
+}
+
+/* Product Quick View */
+.quick-view-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+}
+
+.quick-view-modal {
+  @apply bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Wishlist Heart Animation */
+.heart-bounce {
+  animation: heartBounce 0.6s ease-in-out;
+}
+
+@keyframes heartBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+/* Compare Animation */
+.compare-slide {
+  animation: compareSlide 0.5s ease-in-out;
+}
+
+@keyframes compareSlide {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Toast Notifications */
+.toast {
+  @apply fixed top-4 right-4 bg-white border border-gray-200 rounded-xl p-4 shadow-lg z-50;
+  animation: toastSlide 0.3s ease-out;
+}
+
+@keyframes toastSlide {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Mobile Responsiveness */
@@ -152,7 +294,77 @@ body {
   }
   
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-luxury {
     @apply py-2 px-6 text-sm;
   }
+
+  .mega-menu {
+    @apply relative shadow-none border-none;
+  }
+
+  .category-menu {
+    @apply grid-cols-1 gap-4 p-4;
+  }
+}
+
+/* Dark mode variants for specific elements */
+.dark-mode {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+}
+
+/* Luxury Shadows */
+.shadow-luxury {
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
+}
+
+.shadow-luxury-hover:hover {
+  box-shadow: 0 12px 48px rgba(212, 175, 55, 0.25);
+}
+
+/* Premium Borders */
+.border-luxury {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #d4af37, #f7e98e) border-box;
+}
+
+/* Elegant Typography */
+.text-luxury {
+  @apply text-gray-800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Sophisticated Inputs */
+.input-luxury {
+  @apply bg-gradient-to-r from-white to-gray-50 border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-400/20 transition-all duration-300;
+}
+
+.input-luxury:focus {
+  background: linear-gradient(to right, #ffffff, #fefcf8);
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+}
+
+/* Luxury Hover Effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Premium Gradients */
+.gradient-cream {
+  background: linear-gradient(135deg, #fefcf8 0%, #f8f6f0 50%, #f5f1e8 100%);
+}
+
+.gradient-pearl {
+  background: linear-gradient(135deg, #ffffff 0%, #f9f7f4 50%, #f5f1e8 100%);
+}
+
+.gradient-champagne {
+  background: linear-gradient(135deg, #faf8f5 0%, #f0ede4 50%, #e8e2d4 100%);
 }
